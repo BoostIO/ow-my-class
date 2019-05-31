@@ -1,6 +1,6 @@
 {
   "name": "ow-my-class",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Validate a plain object with a class and make it type-safe!",
   "keywords": [
     "ow",
