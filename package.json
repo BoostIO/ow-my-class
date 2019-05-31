@@ -1,0 +1,79 @@
+{
+  "name": "ow-my-class",
+  "version": "0.0.0",
+  "description": "Validate a plain object with a class and make it type-safe!",
+  "keywords": [
+    "ow",
+    "class",
+    "object",
+    "assert",
+    "assertion",
+    "is",
+    "validate",
+    "validation",
+    "transformation",
+    "serialization",
+    "deserialization",
+    "util"
+  ],
+  "author": "Junyoung Choi <fluke8259@gmail.com>",
+  "homepage": "https://github.com/BoostIO/ow-my-class",
+  "license": "MIT",
+  "main": "dist",
+  "files": [
+    "dist/**/*",
+    "!dist/specs/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BoostIO/ow-my-class.git"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "lint": "prettier --check src/**/*.ts examples/*/src/**/*.ts",
+    "format": "prettier --write src/**/*.ts examples/*/src/**/*.ts",
+    "test": "ava --verbose",
+    "test-ci": "nyc ava && nyc report --reporter=text-lcov > coverage.lcov",
+    "codecov": "codecov",
+    "prepublishOnly": "npm run lint && npm test && npm run build"
+  },
+  "bugs": {
+    "url": "https://github.com/BoostIO/ow-my-class/issues"
+  },
+  "devDependencies": {
+    "ava": "^1.4.1",
+    "codecov": "^3.5.0",
+    "nyc": "^14.1.1",
+    "ow": "^0.13.2",
+    "prettier": "^1.17.1",
+    "rimraf": "^2.6.3",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.4.5"
+  },
+  "dependencies": {
+    "type-fest": "^0.5.2"
+  },
+  "peerDependencies": {
+    "ow": "^0.13.2"
+  },
+  "ava": {
+    "compileEnhancements": false,
+    "files": [
+      "src/specs/*"
+    ],
+    "sources": [
+      "src/**/*.ts"
+    ],
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ]
+  }
+}
