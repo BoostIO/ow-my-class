@@ -38,8 +38,8 @@ Omc.validate(
   User
 )
 
-// Transform plain object into User instance
-const user = Omc.validate(
+// Convert a plain object into a User instance
+const user = Omc.transform(
   {
     name: 'yolo yolo'
   },
