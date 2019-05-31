@@ -2,10 +2,6 @@ import ow, { BasePredicate } from 'ow'
 import { ValidationError, isValidationError } from './ValidationError'
 import { Class } from 'type-fest'
 
-export type ClassType<T> = {
-  new (...args: any[]): T
-}
-
 interface PropertyPredicate {
   propertyName: string
   predicate: BasePredicate<any>
