@@ -93,12 +93,12 @@ export function transform<C>(
       set.add(propertyPredicate.propertyName)
       return set
     },
-    new Set()
+    new Set<string>()
   )
 
-  return [...propertyNameSet].reduce((dto, propertyName) => {
-    dto[propertyName] = value[propertyName]
-    return dto
+  return [...propertyNameSet].reduce((instance, propertyName) => {
+    instance[propertyName] = value[propertyName]
+    return instance
   }, new Constructor())
 }
 
