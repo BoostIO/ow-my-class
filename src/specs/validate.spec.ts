@@ -123,7 +123,7 @@ test('it handles multiple argument errors from ow', t => {
     },
     {
       name: 'ValidationError',
-      message: /2 ArgumentErros are found/
+      message: /2 ArgumentErrors are found./
     }
   )
 })
